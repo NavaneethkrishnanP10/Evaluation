@@ -1,0 +1,135 @@
+html, body {
+    min-height: 100%;
+    }
+    body, div, form, input, select, p { 
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 14px;
+    color: black;
+    line-height: 22px;
+    }
+    
+    h2 {
+    font-weight: 400;
+    text-align: center;
+    }
+    p{
+      color: white;
+        text-align: center;
+    }
+    form {
+        margin-top: 110px;
+        margin-left: 120px;
+        align-items: center;
+        margin-bottom: 20em;
+    width: 700px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #17a2b8;
+    opacity: 70%;
+    }
+    .banner {
+    position: relative;
+    height: 210px;
+    background-image: url("/images/tkt.jpg");  
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
+    .banner::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4); 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    }
+
+    input{
+    margin-bottom: 10px;
+    color: #00f7ff;
+    background-color: black;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    margin-left: 10px;
+    width: 525px;
+    padding: 5px;
+    }
+    .item:hover p, .item:hover i, a {
+    color: black;
+    }
+    .item input:hover{
+    
+    box-shadow: 0 0 6px 0 #17a2b8;
+    color: #17a2b8;
+    }
+    .text{
+        margin-top: 80px;
+        font-size: 90px;
+        margin-left: 120px;
+        color:  white;
+
+    }
+    .btn-block {
+    margin-top: 10px;
+    text-align: center;
+    }
+    button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px; 
+    background: #000000;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    }
+    button:hover {
+    background: #17a2b8;
+    color: white;
+    }
+    .name-item{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .item input{
+        margin-left: 11px;
+        width: 365px;
+    }
+    .itemSmall input{
+        width: 320px;
+    }
+    .itemSmall .form-check-input{
+        float: left;
+    }
+    .itemSmall .form-check-label{
+        margin-left: 160px;
+    }
+    .itemSmall p{
+        font-size: 1.5em;
+        text-align: left;
+        margin-bottom: 2px;
+        margin-left: 15px;
+    }
+    .item p{
+        font-size: 1.5em;
+        text-align: left;
+        margin-left: 15px;
+        margin-bottom: 2px;
+    }
+    .name-item input{
+        margin-left: 1px;
+        width: 320px;
+    }
+    .main{
+        display: flex;
+    }
+    .card{
+        width: 500px;
+    }
+    .card-body p{
+        color: #000;
+    }

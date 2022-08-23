@@ -1,0 +1,37 @@
+.row{
+    margin-left: 80px;
+    margin-top: 250px;
+    width: 1750px;
+    
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.card-body{
+    color: white;
+    width: 250px;
+    height: 420px;
+    border: 50px;
+}
+.card{
+    opacity: 80%;
+    width: 250px;
+    border-radius: 10px;
+    color: black;
+    
+}
+.card-body h4, h2 ,h5{
+    color: black;
+}
+.btn{
+    background-color: black;
+    width: 100px;
+    color: white;
+}
+.btn :hover ::after{
+    background-color: white;
+    color: black;
+    border: black;
+}
