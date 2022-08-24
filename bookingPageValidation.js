@@ -3,69 +3,114 @@ var lastName = document.getElementById("lastName");
 var age = document.getElementById("age");
 var email = document.getElementById("emailAddress");
 var phoneno = document.getElementById("phoneNo");
-var submitBtn = document.getElementById("submit-btn");
+var submitButton = document.getElementById("submit-btn");
+var submitButton2 = document.getElementById("submit-btn2");
+var addPassengerButton=document.getElementById("add-passenger-btn");
+var firstName2 = document.getElementById("firstName2");
+var lastName2 = document.getElementById("lastName2");
+var age2 = document.getElementById("age2");
 
 var name_regex = /^[a-zA-Z]{0,20}$/;
 var age_regex = /^0?1[89]|0?[2-9][0-9]$/;
 var email_regex = /\S+@\S+\.\S+/;
 var phone_regex = /^[0-9]{10}$/;
 
-submitBtn.disabled = "true";
+submitButton.disabled = "true";
+submitButton2.disabled = "true";
+addPassengerButton.disabled="true";
 
-
-
-let inputValidator = {
+let validateInput = {
     "firstn": false,
     "lastn": false,
     "ageperson": false,
     "emailid": false,
-    "phonenumber": false
+    "phonenumber": false,
+    "firstn2": false,
+    "lastn2": false,
+    "ageperson2": false
 };
-
 
 firstName.addEventListener('input', validateFirstName)
 lastName.addEventListener('input', validateLastName)
 age.addEventListener('input', validateAge)
 email.addEventListener('input', validateEmail)
 phoneno.addEventListener('input', validatePhoneNo)
+firstName2.addEventListener('input', validateFirstName2)
+lastName2.addEventListener('input', validateLastName2)
+age2.addEventListener('input', validateAge2)
 
 function passvalues()
-        {
-            var fname=document.getElementById("firstName").value;
-            localStorage.setItem("textvalue0",fname); 
+{
+            var firstName=document.getElementById("firstName").value;
+            localStorage.setItem("textvalue0",firstName); 
             
-            var lname=document.getElementById("lastName").value;
-            localStorage.setItem("textvalue1",lname);
+            var lastName=document.getElementById("lastName").value;
+            localStorage.setItem("textvalue1",lastName);
            
-            var ag=document.getElementById("age").value;
-            localStorage.setItem("textvalue2",ag);
+            var age=document.getElementById("age").value;
+            localStorage.setItem("textvalue2",age);
             
-            var ema=document.getElementById("emailAddress").value;
-            localStorage.setItem("textvalue3",ema);
+            var email=document.getElementById("emailAddress").value;
+            localStorage.setItem("textvalue3",email);
 
-            return false;
-        }
+            var cp=1;
+            localStorage.setItem("cp",cp);
+}
 
-function buttonRelease(){
-
-    console.log(inputValidator);
-    var result = inputValidator.firstn === true && inputValidator.lastn === true && inputValidator.ageperson === true && inputValidator.emailid === true && inputValidator.phonenumber === true;
-     console.log(result);
-
+function passvalues2()
+{
+            var firstName=document.getElementById("firstName").value;
+            localStorage.setItem("textvalue0",firstName); 
     
+            var lastName=document.getElementById("lastName").value;
+            localStorage.setItem("textvalue1",lastName);
+   
+            var age=document.getElementById("age").value;
+            localStorage.setItem("textvalue2",age);
+    
+            var email=document.getElementById("emailAddress").value;
+            localStorage.setItem("textvalue3",email);
+            
+            var firstName2=document.getElementById("firstName2").value;
+            localStorage.setItem("textvalue4",firstName2); 
+            
+            var lastName2=document.getElementById("lastName2").value;
+            localStorage.setItem("textvalue5",lastName2);
+           
+            var age2=document.getElementById("age2").value;
+            localStorage.setItem("textvalue6",age2);
+            
+            var cp=2;
+            localStorage.setItem("cp",cp);
+}
+function buttonRelease()
+{
+    var result = validateInput.firstn === true && validateInput.lastn === true && validateInput.ageperson === true && validateInput.emailid === true && validateInput.phonenumber === true;
     if(result){
 
-        submitBtn.removeAttribute("disabled");
-        console.log("Submit button active");
+        submitButton.removeAttribute("disabled");
+        addPassengerButton.removeAttribute("disabled");
+        console.log("Submit button enabled");
     }
     else{
-        submitBtn.disabled = "true";
-        console.log("Submit button not active");
-        
+        submitButton.disabled = "true";
+        addPassengerButton.disabled="true";
+        console.log("Submit button disabled");
     }
 }
 
-
+function buttonRelease2()
+{
+    var result = validateInput.firstn2 === true && validateInput.lastn2 === true && validateInput.ageperson2 === true ;
+    if(result){
+        submitButton2.removeAttribute("disabled");
+        console.log("Submit button enabled");
+    }
+    else{
+        submitButton2.disabled = "true";
+        console.log("Submit button disabled");
+    }
+}
 
 function validateFirstName() {
 
@@ -73,104 +118,107 @@ function validateFirstName() {
 
     if (name_regex.test(firstName.value)) {
         valid(firstName);
-        inputValidator.firstn = true;
+        validateInput.firstn = true;
         buttonRelease();
     }
     else {
-
         invalid(firstName);
-        inputValidator.firstn = false;
-
+        validateInput.firstn = false;
     }
 }
 
 function validateLastName() {
-
-    console.log(lastName.value);
-
     if (name_regex.test(lastName.value)) {
         valid(lastName);
-        inputValidator.lastn = true;
+        validateInput.lastn = true;
         buttonRelease();
-        
     }
     else {
-
         invalid(lastName);
-        inputValidator.lastn = false;
-
+        validateInput.lastn = false;
     }
-
+}
+function addPassenger(){
+    document.querySelector("#add").style.display = "inline";
+    document.querySelector("#buttonblk").style.display = "none";
 }
 
 function validateAge() {
-
-    console.log(age.value);
-
     if (age_regex.test(age.value)) {
         valid(age);
-        inputValidator.ageperson = true;
-        buttonRelease();
-        
+        validateInput.ageperson = true;
+        buttonRelease();  
     }
     else {
-
         invalid(age);
-        inputValidator.ageperson = false;
+        validateInput.ageperson = false;
         buttonRelease();
-
     }
-
 }
-
+function validateFirstName2() {
+    if (name_regex.test(firstName2.value)) {
+        valid(firstName2);
+        validateInput.firstn2 = true;
+        buttonRelease2();
+    }
+    else {
+        invalid(firstName2);
+        validateInput.firstn2 = false;
+    }
+}
+function validateLastName2() {
+    if (name_regex.test(lastName2.value)) {
+        valid(lastName2);
+        validateInput.lastn2 = true;
+        buttonRelease2();
+    }
+    else {
+        invalid(lastName2);
+        validateInput.lastn2 = false;
+    }
+}
+function validateAge2() {
+    if (age_regex.test(age2.value)) {
+        valid(age2);
+        validateInput.ageperson2 = true;
+        buttonRelease2();  
+    }
+    else {
+        invalid(age2);
+        validateInput.ageperson2 = false;
+        buttonRelease2();
+    }
+}
 function validateEmail() {
-
-    console.log(email.value);
-
     if (email_regex.test(email.value)) {
         valid(email);
-        inputValidator.emailid = true;
+        validateInput.emailid = true;
         buttonRelease();
-        
     }
     else {
-
         invalid(email);
-        inputValidator.emailid = false;
-
+        validateInput.emailid = false;
     }
-
 }
 
 function validatePhoneNo() {
-
-    console.log(phoneno.value);
-
     if (phone_regex.test(phoneno.value)) {
         valid(phoneno);
-        inputValidator.phonenumber = true;
+        validateInput.phonenumber = true;
         buttonRelease();
-        
     }
     else {
-
         invalid(phoneno);
-        inputValidator.phonenumber = false;
-
+        validateInput.phonenumber = false;
     }
-
 }
 
 function valid(element){
-
     element.style.borderColor = "green";
     element.style.borderWidth = "thin thick";
-
 }
 
 function invalid(element){
-
     element.style.borderColor = "red";
     element.style.borderWidth = "thin thick";
-
 }

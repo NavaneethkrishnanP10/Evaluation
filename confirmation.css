@@ -1,36 +1,47 @@
 
 .row{
-    margin-left: 80px;
+    margin-left: 560px;
     margin-top: 250px;
-    width: 1750px;
-    
+    width: 750px;
     align-items: center;
     display: flex;
     justify-content: space-evenly;
     
-}button {
+}
+button {
     background-color: #008CBA;
     border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
     font-size: 16px;
-  }
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
 .card{
     opacity: 80%;
     width: 800px;
     border-radius: 10px;
     color: black;
 }
+
 .card-body{
-    margin-top: 10px;
+    margin-left: -110px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     color: white;
     width: 500px;
-    height: 520px;
+    height: 230px;
     border: 50px;
 }
- 
 
 .card-body h4 ,h5{
+    font-size: 1em;
     color: black;
+}
+
+.new{
+    margin-top: 10px;
+    margin-left: 550px;
 }

@@ -5,81 +5,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LetsGO!</title>
-    <link rel="icon" type="image/x-icon" href="/images/fav.png">
-    
+
+    <!--font libraries-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!--favicon-->
+    <link rel="icon" type="image/x-icon" href="/images/fav.png">
+    
+    <!--stylesheets-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bookingstyle.css">
 </head>
 <body>
     <div class="main">
-    
     <section class="header">
         <nav>
+            <!--page logo-->
             <a href = "mainPage.html"><img src = "images/logo.jpg"></a>
             
         </nav>
+        <!--Title-->
         <div class = "text">
           Ticket Booking
       </div>
-        <form action="confirmationPage.html" name="myForm">
-          
-            <h2>Passenger Details</h2>
-            <div class="item">
-              <p>Name</p>
-              <div class="name-item">
-                <input type="text"  class="form-control" id="firstName" name="name" placeholder="First" maxlength="20" required/>
-                <input type="text"  class="form-control" id="lastName"  name="name" placeholder="Last" maxlength="20" required/>
-              </div>
-            </div>
-            <div class="itemSmall">
-              <p>Age</p>
-              <input type="text" class="form-control" id="age" name="age" />
-            </div>
-            <div class="itemSmall">
-              <p>Gender</p>
-              <input class="form-check-input" type="radio" id="male" value="male" name="gender" required>
-              <label class="form-check-label" for="male">Male</label>
-          </div>
-          <div class="itemSmall">
-              <input class="form-check-input" type="radio" id="female" value="female" name="gender">
-              <label class="form-check-label" for="female">Female</label>
-          </div>
-          <div class="itemSmall">
-            <input class="form-check-input" type="radio" id="other" value="other" name="gender">
-            <label class="form-check-label" for="other">Other</label>
-            <div class="item">
-              <p>Phone</p>
-              <input type="text" class="form-control" id="phoneNo" name="phone"/>
-            </div>
-            <div class="item">
-              <p>Email</p>
-              <input type="text" class="form-control" id="emailAddress" name="email" />
-            </div>
-            <div class="btn-block">
-              
-              <button type="submit" class="btn btn-primary" id="submit-btn" onclick="passvalues()">Book Tickets</button>
-            </div>
-          </form>
-          
+      <div class="content">
+        <div class="formcontent">
+            <!--form for first passenger-->
+            <form class="form1" action="confirmationPage.html">
+                
+                <div class="item">
+                    <p>Passenger 1</p>
+                    <br>
+                    <p>Name</p>
+                    <div class="name-item">
+                      <input type="text"  class="form-control" id="firstName" name="name" placeholder="First" maxlength="20" required/>
+                      <input type="text"  class="form-control" id="lastName"  name="name" placeholder="Last" maxlength="20" required/>
+                    </div>
+                  </div>
+                  <div class="itemSmall">
+                    <p>Age</p>
+                    <input type="text" class="form-control" id="age"/>
+                  </div>
+                  <div class="itemSmall">
+                    <div class="gender">
+                    <p>Gender</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="male" value="male" name="gender" required>
+                        <p>Male</p>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="female" value="female" name="gender">
+                        <p>Female<p>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="other" value="other" name="gender">
+                        <p>Other</p>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="item">
+                    <p>Email</p>
+                    <input type="email" class="form-control" id="emailAddress" required>
+                </div>
+                <div class="item">
+                    <p>Phone Number</p>
+                    <input type="text" class="form-control" id="phoneNo" required>
+                </div>
+                <div class="btn-block" id = "buttonblk">
+                    <button type="button" class="btn" onclick="addPassenger()"id="add-passenger-btn">Add Passenger</button>        
+                    <button type="submit" class="btn" onclick="passvalues()" id="submit-btn"       >Submit</button>
+                </div>
+        </div>
+            </form>
+            <!--form for second passenger-->
+            <form class="form2" id ="add" action="confirmationPage.html">
+                <div class="item">
+                    <p>Passenger 1</p>
+                    <br>
+                    <p>Name</p>
+                    <div class="name-item">
+                      <input type="text"  class="form-control" id="firstName2" name="name" placeholder="First" maxlength="20" required/>
+                      <input type="text"  class="form-control" id="lastName2"  name="name" placeholder="Last" maxlength="20" required/>
+                    </div>
+                </div>
+                <div class="itemSmall">
+                    <p>Age</p>
+                    <input type="text" class="form-control" id="age2"/>
+                </div>
+                <div class="itemSmall">
+                    <div class="gender">
+                        <p>Gender</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="male" value="male" name="gender" required>
+                            <p>Male</p>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="female" value="female" name="gender">
+                            <p>Female<p>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="other" value="other" name="gender">
+                            <p>Other</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-block">
+                    <button type="submit" class="btn" onclick="passvalues2()" id="submit-btn2" >Submit</button>
+                </div>
+        </div>
+            </form>
+        </div>
+    </div>
     </section>
-    <button type="submit" href="/" onclick="allLetter(document.myForm.name)">Add Passenger<br>+</button>
-    
-    <div class="card">
-      <div class="card-header">
-        Passenger list
-      </div>
-      <div class="card-body">
-        <p class="card-text">No passengers added currently</p>
-
-      </div>
     </div>
-    </div>
+    <!--javascript-->
     <script src="bookingPageValidation.js"></script>
 </body>
 </html>

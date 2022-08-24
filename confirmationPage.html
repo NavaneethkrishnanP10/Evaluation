@@ -5,38 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LetsGO!</title>
+
+    <!--font libraries-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!--favicon-->
     <link rel="icon" type="image/x-icon" href="/images/fav.png">
     
-
+    <!--pdf creator library for ticket printing-->
     <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
     <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+
+    <!--stylesheets-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="confirmation.css">
 </head>
 <body>
     <section class="header">
-    <nav>
-        <a href = "mainPage.html"><img src = "images/logo.jpg"></a>
-
-        
-    </nav>
-    <div class = "text-box">
-        <h1>Ticket Confirmation</h1>
-    </div>
-    
-        <div class="row row-cols-1 row-cols-md-3 g-4" id="card-collection" style="max-width: 18rem;"> </div>
-    
-    <button onclick="createPdf()">Create PDF</button>
+        <nav>
+        <!--page logo-->
+            <a href = "mainPage.html"><img src = "images/logo.jpg"></a>
+        </nav>
+        <!--Title-->
+        <div class = "text-box">
+            <h1>Ticket Confirmation</h1>
+        </div>
+        <div class="row">
+            <!--Passenger details-->
+            <div class="card text-center" id="card-collection1" style="max-width: 18rem;"> 
+            </div>
+            <!--Flight details-->
+            <div class="card text-center" id="card-collection2" style="max-width: 18rem;">
+            </div>
+        </div>
+        <div class="new row">
+            <!--Ticket download-->
+            <button onclick="createPdf()">Download Ticket</button>
+            <!--Return to homepage-->
+            <button onclick="window.location.href='mainPage.html'">Return to Home</button>
+        </div>
     </section>
+    <!--javascript-->
     <script src ="confirmation.js"></script>
     <script src ="pdf.js"></script>
 </body>

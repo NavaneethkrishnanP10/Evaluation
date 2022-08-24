@@ -1,6 +1,7 @@
-html, body {
+    html, body {
     min-height: 100%;
     }
+
     body, div, form, input, select, p { 
     padding: 0;
     margin: 0;
@@ -15,11 +16,17 @@ html, body {
     font-weight: 400;
     text-align: center;
     }
+
     p{
       color: white;
         text-align: center;
     }
-    form {
+
+    .add{
+        display: none;
+    }
+
+    form{
         margin-top: 110px;
         margin-left: 120px;
         align-items: center;
@@ -30,23 +37,6 @@ html, body {
     background: #17a2b8;
     opacity: 70%;
     }
-    .banner {
-    position: relative;
-    height: 210px;
-    background-image: url("/images/tkt.jpg");  
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    }
-    .banner::after {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.4); 
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    }
 
     input{
     margin-bottom: 10px;
@@ -55,17 +45,19 @@ html, body {
     border: 1px solid rgb(0, 0, 0);
     border-radius: 3px;
     margin-left: 10px;
-    width: 525px;
+    width: 500px;
     padding: 5px;
     }
+
     .item:hover p, .item:hover i, a {
     color: black;
     }
+
     .item input:hover{
-    
     box-shadow: 0 0 6px 0 #17a2b8;
     color: #17a2b8;
     }
+
     .text{
         margin-top: 80px;
         font-size: 90px;
@@ -73,10 +65,12 @@ html, body {
         color:  white;
 
     }
+
     .btn-block {
     margin-top: 10px;
     text-align: center;
     }
+
     button {
     width: 150px;
     padding: 10px;
@@ -87,49 +81,81 @@ html, body {
     color: #fff;
     cursor: pointer;
     }
-    button:hover {
-    background: #17a2b8;
-    color: white;
+
+    .form1{
+        height:540px;
     }
+
+    .form2{
+        display: none;
+        height: 390px;
+    }
+
+    button:hover {
+    background: white;
+    color: black;
+    }
+
     .name-item{
         display: flex;
         justify-content: space-evenly;
     }
+
     .item input{
-        margin-left: 11px;
-        width: 365px;
+        margin-left: 15px;
+        width: 325px;
     }
+
+   .content{
+    display: flex;
+   }
+
+    .gender{
+        margin-left: 100px;
+        display: inline;
+    }
+
     .itemSmall input{
+        margin-top: 5px;
+        margin-left: 15px;
         width: 320px;
     }
+
     .itemSmall .form-check-input{
         float: left;
     }
+
     .itemSmall .form-check-label{
         margin-left: 160px;
     }
+
     .itemSmall p{
         font-size: 1.5em;
         text-align: left;
         margin-bottom: 2px;
         margin-left: 15px;
     }
+
     .item p{
         font-size: 1.5em;
         text-align: left;
         margin-left: 15px;
         margin-bottom: 2px;
     }
+
     .name-item input{
         margin-left: 1px;
         width: 320px;
     }
+
     .main{
         display: flex;
     }
+
     .card{
         width: 500px;
     }
+    
     .card-body p{
         color: #000;
     }
